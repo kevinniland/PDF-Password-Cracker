@@ -1,3 +1,11 @@
 import argparse
+import sys
+import pikepdf
+import re
+from tqdm import tqdm
 
-subprocess.Popen([file],shell=True)
+# Logic
+def crack_password(digits, filename):
+    return
+
+# Parse command line arguments

@@ -4,10 +4,6 @@ import sys
 import re
 from tqdm import tqdm
 
-password = 123456
-starting_num = 0
-i = 0
-
 # Issues
 # ======
 # How to deal with a password such as 00001? 000234? Python doesn't consider 00001 a valid int. When converting the string "00001"
@@ -17,6 +13,8 @@ i = 0
 
 # Logic
 def crack_password(digits, file):
+    i = 0
+
     while i < sys.maxsize:
         password = str(i).zfill(digits)
 
@@ -37,4 +35,4 @@ parser.add_argument('filename', help="Full path of the PDF file")
 args = parser.parse_args()
 
 print("Attempting to crack password...")
-crack_password(6)
+crack_password(6, args.filename)
